@@ -8,6 +8,7 @@
     "dev": "next dev --turbo",
     "build": "next build",
     "start": "next start",
+    "lint": "next lint",
     "prettier": "prettier --write --ignore-unknown .",
     "prettier:check": "prettier --check --ignore-unknown .",
     "test": "pnpm prettier:check"
@@ -15,24 +16,34 @@
   "dependencies": {
     "@headlessui/react": "^2.1.2",
     "@heroicons/react": "^2.1.5",
+    "babel-plugin-react-compiler": "0.0.0-experimental-4b2c386-20240808",
     "clsx": "^2.1.1",
+    "eslint-plugin-react-compiler": "0.0.0-experimental-3cbe879-20240808",
     "geist": "^1.3.1",
-    "next": "14.2.5",
-    "react": "18.3.1",
-    "react-dom": "18.3.1",
+    "next": "15.0.0-canary.110",
+    "react": "19.0.0-rc-9d2da591-20240808",
+    "react-dom": "19.0.0-rc-9d2da591-20240808",
     "sonner": "^1.5.0"
   },
   "devDependencies": {
     "@tailwindcss/container-queries": "^0.1.1",
-    "@tailwindcss/typography": "^0.5.13",
-    "@types/node": "20.14.12",
-    "@types/react": "18.3.3",
-    "@types/react-dom": "18.3.0",
-    "autoprefixer": "^10.4.19",
-    "postcss": "^8.4.39",
+    "@tailwindcss/typography": "^0.5.14",
+    "@types/node": "22.1.0",
+    "@types/react": "npm:types-react@rc",
+    "@types/react-dom": "npm:types-react-dom@rc",
+    "autoprefixer": "^10.4.20",
+    "eslint": "^8.57.0",
+    "eslint-config-next": "15.0.0-canary.110",
+    "eslint-config-prettier": "^9.1.0",
+    "postcss": "^8.4.41",
     "prettier": "3.3.3",
     "prettier-plugin-tailwindcss": "^0.6.5",
-    "tailwindcss": "^3.4.6",
+    "tailwindcss": "^3.4.9",
     "typescript": "5.5.4"
-  }
+  },
+  "overrides": {
+    "@types/react": "npm:types-react@rc",
+    "@types/react-dom": "npm:types-react-dom@rc"
+  },
+  "packageManager": "pnpm@9.7.0"
 }

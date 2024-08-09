@@ -1,7 +1,7 @@
 'use client';
 
 import { useRouter, useSearchParams } from 'next/navigation';
-import React, { createContext, useContext, useMemo, useOptimistic } from 'react';
+import React, { createContext, useContext, useOptimistic } from 'react';
 
 type ProductState = {
   [key: string]: string;
@@ -48,14 +48,20 @@ export function ProductProvider({ children }: { children: React.ReactNode }) {
     return { ...state, ...newState };
   };
 
-  const value = useMemo(
-    () => ({
-      state,
-      updateOption,
-      updateImage
-    }),
-    [state]
-  );
+  // const value = useMemo(
+  //   () => ({
+  //     state,
+  //     updateOption,
+  //     updateImage
+  //   }),
+  //   [state]
+  // );
+
+  const value = {
+    state,
+    updateOption,
+    updateImage
+  };
 
   return <ProductContext.Provider value={value}>{children}</ProductContext.Provider>;
 }

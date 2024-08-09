@@ -1,7 +1,7 @@
 'use client';
 
 import type { Cart, CartItem, Product, ProductVariant } from 'lib/shopify/types';
-import React, { createContext, use, useContext, useMemo, useOptimistic } from 'react';
+import React, { createContext, use, useContext, useOptimistic } from 'react';
 
 type UpdateType = 'plus' | 'minus' | 'delete';
 
@@ -163,14 +163,20 @@ export function CartProvider({
     updateOptimisticCart({ type: 'ADD_ITEM', payload: { variant, product } });
   };
 
-  const value = useMemo(
-    () => ({
-      cart: optimisticCart,
-      updateCartItem,
-      addCartItem
-    }),
-    [optimisticCart]
-  );
+  // const value = useMemo(
+  //   () => ({
+  //     cart: optimisticCart,
+  //     updateCartItem,
+  //     addCartItem
+  //   }),
+  //   [optimisticCart]
+  // );
+
+  const value = {
+    cart: optimisticCart,
+    updateCartItem,
+    addCartItem
+  };
 
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
 }

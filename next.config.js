@@ -1,5 +1,8 @@
 /** @type {import('next').NextConfig} */
 module.exports = {
+  experimental: {
+    reactCompiler: true
+  },
   images: {
     formats: ['image/avif', 'image/webp'],
     remotePatterns: [
@@ -9,5 +12,11 @@ module.exports = {
         pathname: '/s/files/**'
       }
     ]
+  },
+
+  logging: {
+    fetches: {
+      fullUrl: true
+    }
   }
 };
