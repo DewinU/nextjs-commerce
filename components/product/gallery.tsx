@@ -27,6 +27,7 @@ export function Gallery({ images }: { images: { src: string; altText: string }[]
             alt={images[imageIndex]?.altText as string}
             src={images[imageIndex]?.src as string}
             priority={true}
+            placeholder="blur"
           />
         )}
 

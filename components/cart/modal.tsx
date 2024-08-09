@@ -128,6 +128,7 @@ export default function CartModal() {
                                       item.merchandise.product.title
                                     }
                                     src={item.merchandise.product.featuredImage.url}
+                                    placeholder="blur"
                                   />
                                 </div>
                                 <Link
