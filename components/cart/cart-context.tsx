@@ -108,6 +108,7 @@ function cartReducer(state: Cart | undefined, action: CartAction): Cart {
 
   switch (action.type) {
     case 'UPDATE_ITEM': {
+      console.log('UPDATE_ITEM');
       const { merchandiseId, updateType } = action.payload;
       const updatedLines = currentCart.lines
         .map((item) =>
@@ -130,6 +131,7 @@ function cartReducer(state: Cart | undefined, action: CartAction): Cart {
       return { ...currentCart, ...updateCartTotals(updatedLines), lines: updatedLines };
     }
     case 'ADD_ITEM': {
+      console.log('ADD_ITEM');
       const { variant, product } = action.payload;
       const existingItem = currentCart.lines.find((item) => item.merchandise.id === variant.id);
       const updatedItem = createOrUpdateCartItem(existingItem, variant, product);
